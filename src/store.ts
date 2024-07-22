@@ -7,9 +7,21 @@ interface Store {
   addToOrder: (product: Product) => void;
 }
 
-export const useStore = create<Store>(() => ({
+export const useStore = create<Store>((set) => ({
   order: [],
   addToOrder: (product) => {
-    console.log('Agregando', product);
+    const { categoryId, image, ...data } = product;
+    console.log(data);
+
+    set((state) => ({
+      order: [
+        ...state.order,
+        {
+          ...data,
+          quantity: 1,
+          subtotal: 1 * data.price,
+        },
+      ],
+    }));
   },
 }));
