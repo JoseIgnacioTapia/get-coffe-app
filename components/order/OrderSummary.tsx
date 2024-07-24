@@ -1,5 +1,6 @@
 'use client';
 import { useMemo } from 'react';
+import { toast } from 'react-toastify';
 import { useStore } from '@/src/store';
 import ProductDetails from './ProductDetails';
 import { formatCurrency } from '@/src/utils';
@@ -19,8 +20,13 @@ function OrderSummary() {
     };
 
     const result = OrderSchema.safeParse(data);
-    console.log(result);
+    if (!result.success) {
+      result.error.issues.forEach((issue) => {
+        toast.error(issue.message);
+      });
+    }
 
+    return;
     createOrder();
   };
 
