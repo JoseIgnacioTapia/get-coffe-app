@@ -1,7 +1,8 @@
 'use client';
+import { useMemo } from 'react';
 import { useStore } from '@/src/store';
 import ProductDetails from './ProductDetails';
-import { useMemo } from 'react';
+import { formatCurrency } from '@/src/utils';
 
 function OrderSummary() {
   const order = useStore((state) => state.order);
@@ -23,7 +24,8 @@ function OrderSummary() {
           ))}
 
           <p className='text-2xl mt-20 text-center'>
-            Total a pagar: <span className='font-bold'>{total}</span>
+            Total a pagar:{' '}
+            <span className='font-bold'>{formatCurrency(total)}</span>
           </p>
         </div>
       )}
