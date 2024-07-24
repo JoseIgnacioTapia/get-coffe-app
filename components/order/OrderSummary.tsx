@@ -4,6 +4,7 @@ import { useStore } from '@/src/store';
 import ProductDetails from './ProductDetails';
 import { formatCurrency } from '@/src/utils';
 import { createOrder } from '@/actions/create-order-actions';
+import { OrderSchema } from '@/src/schema';
 
 function OrderSummary() {
   const order = useStore((state) => state.order);
@@ -13,7 +14,12 @@ function OrderSummary() {
   );
 
   const handleCreateOrder = (formData: FormData) => {
-    console.log(formData.get('name'));
+    const data = {
+      name: formData.get('name'),
+    };
+
+    const result = OrderSchema.safeParse(data);
+    console.log(result);
 
     createOrder();
   };
