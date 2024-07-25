@@ -9,6 +9,7 @@ import { OrderSchema } from '@/src/schema';
 
 function OrderSummary() {
   const order = useStore((state) => state.order);
+  const clearOrder = useStore((state) => state.clearOrder);
   const total = useMemo(
     () => order.reduce((total, item) => total + item.quantity * item.price, 0),
     [order]
@@ -22,7 +23,7 @@ function OrderSummary() {
     };
 
     const result = OrderSchema.safeParse(data);
-    console.log(result);
+
     if (!result.success) {
       result.error.issues.forEach((issue) => {
         toast.error(issue.message);
@@ -31,14 +32,15 @@ function OrderSummary() {
       return;
     }
 
-    createOrder(data);
-
     const response = await createOrder(data);
     if (response?.errors) {
       response.errors.forEach((issue) => {
         toast.error(issue.message);
       });
     }
+
+    toast.success('Pedido Realizado Correctamente');
+    clearOrder();
   };
 
   return (
