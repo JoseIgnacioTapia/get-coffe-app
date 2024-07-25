@@ -14,7 +14,7 @@ function OrderSummary() {
     [order]
   );
 
-  const handleCreateOrder = (formData: FormData) => {
+  const handleCreateOrder = async (formData: FormData) => {
     const data = {
       name: formData.get('name'),
     };
@@ -24,10 +24,18 @@ function OrderSummary() {
       result.error.issues.forEach((issue) => {
         toast.error(issue.message);
       });
+
+      return;
     }
 
-    return;
-    createOrder();
+    createOrder(data);
+
+    const response = await createOrder(data);
+    if (response?.errors) {
+      response.errors.forEach((issue) => {
+        toast.error(issue.message);
+      });
+    }
   };
 
   return (
