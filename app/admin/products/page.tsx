@@ -36,7 +36,8 @@ async function ProductsPage({
     productsData,
     totalProductsData,
   ]);
-  console.log(totalProducts);
+  const totalPages = Math.ceil(totalProducts / pageSize);
+  console.log(totalPages);
 
   return (
     <>
@@ -44,7 +45,7 @@ async function ProductsPage({
 
       <ProductTable products={products} />
 
-      <ProductsPagination page={page} />
+      <ProductsPagination page={page} totalPages={totalPages} />
     </>
   );
 }
