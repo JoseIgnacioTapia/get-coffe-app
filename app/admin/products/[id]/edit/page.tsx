@@ -1,5 +1,8 @@
-import { prisma } from '@/src/lib/prisma';
 import { notFound } from 'next/navigation';
+import Heading from '@/components/ui/Heading';
+import { prisma } from '@/src/lib/prisma';
+import EditProductForm from '@/components/products/EditProductForm';
+import ProductForm from '@/components/products/ProductForm';
 
 async function getProductById(id: number) {
   const product = await prisma.product.findUnique({
@@ -14,11 +17,18 @@ async function getProductById(id: number) {
   return product;
 }
 
-async function EditFunctionsPage({ params }: { params: { id: string } }) {
+async function EditProductsPage({ params }: { params: { id: string } }) {
   const product = await getProductById(+params.id);
-  console.log(product);
 
-  return <div>page</div>;
+  return (
+    <>
+      <Heading>Editar Producto: {product.name}</Heading>
+
+      <EditProductForm>
+        <ProductForm product={product} />
+      </EditProductForm>
+    </>
+  );
 }
 
-export default EditFunctionsPage;
+export default EditProductsPage;
