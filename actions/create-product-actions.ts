@@ -13,6 +13,7 @@ export async function createProduct(data: unknown) {
   }
 
   await prisma.product.create({
+    // @ts-ignore
     data: result.data,
   });
 }

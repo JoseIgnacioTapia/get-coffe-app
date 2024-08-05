@@ -11,10 +11,11 @@ function AddProductForm({ children }: { children: React.ReactNode }) {
     const data = {
       name: formData.get('name'),
       price: formData.get('price'),
-      categoryId: formData.get('categoryId'),
+      categoryId: parseInt(formData.get('categoryId') as string, 10),
       image: formData.get('image'),
     };
     const result = ProductSchema.safeParse(data);
+    console.log(result);
     if (!result.success) {
       result.error.issues.forEach((issue) => {
         toast.error(issue.message);
