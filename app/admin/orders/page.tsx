@@ -13,11 +13,11 @@ function OrdersPage() {
       .then((res) => res.json())
       .then((data) => data);
   const { data, error, isLoading } = useSWR<OrderWithProducts[]>(url, fetcher, {
-    refreshInterval: 60000,
+    refreshInterval: 10000,
     revalidateOnFocus: false, // Careful consumes a lot of requests
   });
 
-  if (isLoading) return 'Cargando...';
+  if (isLoading) return <p>Cargando...</p>;
 
   if (data)
     return (
