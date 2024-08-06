@@ -30,4 +30,4 @@ Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod,
    DATABASE_URL=
    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
    NEXT_PUBLIC_CLOUDINARY_API_KEY=
-   CLOUDINARY_API_SECRET=rO64UqAkzlyA0ef2DsOu_iWFJxw
+   CLOUDINARY_API_SECRET=
