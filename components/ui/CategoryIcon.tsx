@@ -14,11 +14,15 @@ function CategoryIcon({ category }: CategoryIconProps) {
   return (
     <div
       className={`${
-        category.slug === params.category ? 'bg-amber-400' : ''
+        category.slug === params.category ? 'bg-amber-800' : ''
       } flex items-center gap-4 w-full border-t border-gray-200 p-3 last-of-type:border-b`}
     >
       <div className='w-16 h-16 relative'>
-        <Image fill alt='Imagen Categoria' src={`/icon_${category.slug}.svg`} />
+        <Image
+          fill
+          alt='Imagen Categoria'
+          src={`/icon_${category.slug}.jpeg`}
+        />
       </div>
 
       <Link href={`/order/${category.slug}`} className='text-xl font-bold'>

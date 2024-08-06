@@ -42,7 +42,7 @@ function AddProductForm({ children }: { children: React.ReactNode }) {
 
         <input
           type='submit'
-          className='bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer'
+          className='bg-amber-800 hover:bg-amber-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer'
         />
       </form>
     </div>

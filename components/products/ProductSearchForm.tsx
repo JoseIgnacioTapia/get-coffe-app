@@ -31,7 +31,7 @@ function ProductSearchForm() {
 
       <input
         type='submit'
-        className='bg-indigo-600 p-2 uppercase text-white cursor-pointer'
+        className='bg-amber-800 p-2 uppercase text-white cursor-pointer'
       />
     </form>
   );
