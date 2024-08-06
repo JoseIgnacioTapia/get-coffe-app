@@ -13,7 +13,7 @@ async function OrderSidebar() {
   console.log(categories);
 
   return (
-    <aside className='md:w-72 md:h-screen bg-gray-200'>
+    <aside className='md:w-72 md:h-screen bg-gray-300'>
       <Logo />
       <nav className='mt-10'>
         {categories.map((category) => (
