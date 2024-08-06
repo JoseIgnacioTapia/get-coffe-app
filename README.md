@@ -42,6 +42,11 @@ Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod,
 Para iniciar el servidor de desarrollo, utiliza el siguiente comando:
    ```bash
    npm run dev
+```
 
 ## Validación de Datos
 Este proyecto utiliza la librería Zod para la validación de datos en los formularios. Los esquemas de validación se encuentran en el archivo src/schema.
+
+## Consideraciones
+Asegúrate de tener PostgreSQL u otro motor de base de datos soportado por Prisma en ejecución antes de iniciar el proyecto.
+Para realizar cambios en el esquema de la base de datos, actualiza el archivo prisma/schema.prisma y ejecuta npx prisma migrate dev para aplicar los cambios.
