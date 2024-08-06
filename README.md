@@ -22,3 +22,12 @@ Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod,
    ```bash
    git clone https://github.com/JoseIgnacioTapia/get-coffe-app.git
    cd get-coffe-app
+2. Instala las dependencias:
+   ```bash
+   npm install
+3. Crea un archivo .env en la raíz del proyecto y añade la URL de conexión a tu base de datos:
+   ```bash
+   DATABASE_URL=
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+   NEXT_PUBLIC_CLOUDINARY_API_KEY=
+   CLOUDINARY_API_SECRET=rO64UqAkzlyA0ef2DsOu_iWFJxw
