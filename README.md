@@ -31,3 +31,17 @@ Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod,
    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
    NEXT_PUBLIC_CLOUDINARY_API_KEY=
    CLOUDINARY_API_SECRET=
+4. Inicializa la base de datos y genera el cliente de Prisma:
+   ```bash
+   npx prisma migrate dev --name init
+5. (Opcional) Si deseas visualizar y gestionar tu base de datos, puedes utilizar Prisma Studio:
+   ```bash
+   npx prisma studio
+
+## Ejecutar el Proyecto
+Para iniciar el servidor de desarrollo, utiliza el siguiente comando:
+   ```bash
+   npm run dev
+
+## Validación de Datos
+Este proyecto utiliza la librería Zod para la validación de datos en los formularios. Los esquemas de validación se encuentran en el archivo src/schema.
