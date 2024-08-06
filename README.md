@@ -1,4 +1,4 @@
-# Proyecto de Gestión de Productos
+# Proyecto de Gestión de Pedidos de una cafetería
 
 Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod, y React. La aplicación permite crear, leer, actualizar y eliminar productos, así como validar los formularios de producto.
 
@@ -20,5 +20,5 @@ Este es un proyecto de gestión de productos utilizando Next.js 14, Prisma, Zod,
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/proyecto-gestion-productos.git
-   cd proyecto-gestion-productos```
+   git clone https://github.com/JoseIgnacioTapia/get-coffe-app.git
+   cd get-coffe-app
